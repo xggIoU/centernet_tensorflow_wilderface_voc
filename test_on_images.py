@@ -59,7 +59,7 @@ if test_item=="voc":
 else:
     class_names=("face",)
     imgfile_pattern ="demo_image_wilderface/*"
-    model_path = "shufflenet-face/shufflenet-face.ckpt-14800"
+    model_path = "shufflenet_face/shufflenet-face.ckpt-14800"
     down_ratio = 4.0
     class_prob_thresh = 0.45
     num_classes=1
