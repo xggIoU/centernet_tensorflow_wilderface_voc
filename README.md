@@ -13,8 +13,8 @@
 * opencv-python4.1
 * gtx1080ti*1
 ### 3. datasets
-<br>for single-target detection, trained on wilderface dataset with 12876 training images.
-<br>for multi-target detection, trained on pascal-voc2012 dataset with 17125 training images.
+<br>For single-target detection, trained on wilderface dataset with 12876 training images.
+<br>For multi-target detection, trained on pascal-voc2012 dataset with 17125 training images.
 ### 4. Experimental result
 #### 4.1 Face detection
 ```
