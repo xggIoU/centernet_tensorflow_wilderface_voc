@@ -1,7 +1,7 @@
 # centernet_tensorflow_wilderface_voc
 ### 1. Introduction
 This is the unofficial  implementation of the "CenterNet:Objects as Points".In my experiment, it was not based on the DLA34, Hourglass and other networks in the original paper. I simply modified shufflenetv2_1.0x and yolov3, and kept their feature extraction part, then connected to centernet_detect_head, and did not use dcn convolution.
-<br>This is just a simple attempt to the effect of the algorithm.
+<br>This is just a simple attempt to the effect of the algorithm.I only have one 1080ti,I did not use any data augmentation and any other tricks during training，so the model is not very good.
 <br>Official implementation:<https://github.com/xingyizhou/CenterNet>Corresponding paper:<https://arxiv.org/pdf/1904.07850.pdf>
 <br>Shufflenetv2 is modified from:<https://github.com/timctho/shufflenet-v2-tensorflow>
 <br>Yolov3 is is modified from:<https://github.com/wizyoung/YOLOv3_TensorFlow>
@@ -39,3 +39,10 @@ train_time≈9.7 hours
 ![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/yolov3_centernet.png)
 ##### 4.2.2 result(on training set,not very good on the test set)
 ![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/voc_detect.jpg)
+#### 4.3 inference time
+```
+environment：python3.6 gtx1080ti*1 intel-i7-8700k
+model_name   			avg_time(ms)    input_size	 model_size(.pb)	
+shufflenet-face			21.37			512x512		 20.5MB
+yolo3_centernet_voc		25.23			512x512		 230MB
+```
