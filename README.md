@@ -2,7 +2,8 @@
 ### 1. Introduction
 * This is the unofficial  implementation of the "CenterNet:Objects as Points".In my experiment, it was not based on the DLA34, Hourglass and other networks in the original paper. I simply modified shufflenetv2_1.0x and yolov3, and kept their feature extraction part, then connected to centernet_detect_head, and did not use dcn convolution.
 * This is just a simple attempt to the effect of the algorithm.I only have one 1080ti,I did not use any data augmentation and any other tricks during training，so the model is not very good.If it helps you, please give me a star.
-<br>Official implementation:<https://github.com/xingyizhou/CenterNet>Corresponding paper:<https://arxiv.org/pdf/1904.07850.pdf>
+<br>Official implementation:<https://github.com/xingyizhou/CenterNet>
+<br>Corresponding paper:<https://arxiv.org/pdf/1904.07850.pdf>
 <br>Shufflenetv2 is modified from:<https://github.com/timctho/shufflenet-v2-tensorflow>
 <br>Yolov3 is is modified from:<https://github.com/wizyoung/YOLOv3_TensorFlow>
 ### 2. My experimental environment
