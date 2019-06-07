@@ -43,6 +43,6 @@ train_time≈9.7 hours
 ```
 environment：python3.6 gtx1080ti*1 intel-i7-8700k
 model_name   			avg_time(ms)    input_size	 model_size(.pb)	
-shufflenet-face			21.37			512x512		 20.5MB
-yolo3_centernet_voc		25.23			512x512		 230MB
+shufflenet-face			21.37		512x512		 20.5MB
+yolo3_centernet_voc		25.23		512x512		 230MB
 ```
