@@ -46,5 +46,5 @@ model_name   			avg_time(ms)    input_size	 model_size(.pb)
 shufflenet-face			21.37		512x512		 20.5MB
 yolo3_centernet_voc		25.23		512x512		 230MB
 ```
-### 5.0 Run test demo
-download weights,and put them to 
+### 5. Run test demo
+download weights,and put them to ./shufflenet_face/ and ./yolo3_centernet_voc/,then run test_on_images.py
