@@ -19,6 +19,7 @@
 #### 4.1 Face detection
 ```
 input_size:512x512
+downsample_ratio:4.0
 batch_size:14
 global_steps:14800
 epochs≈16
@@ -31,6 +32,7 @@ train_time≈3.7 hours
 #### 4.2 Multi-target detection
 ```
 input_size:512x512
+downsample_ratio:8.0
 batch_size:8
 global_steps:70000
 epochs≈32
