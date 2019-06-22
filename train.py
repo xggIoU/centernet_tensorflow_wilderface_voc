@@ -9,31 +9,23 @@ from yolov3_centernet import yolov3_centernet
 from create_label import CreatGroundTruth
 
 def parse_color_data(example_proto):
-    features = {"img_raw_b": tf.FixedLenFeature([], tf.string),
-                "img_raw_g": tf.FixedLenFeature([], tf.string),
-                "img_raw_r": tf.FixedLenFeature([], tf.string),
+    
+    features = {"img_raw": tf.FixedLenFeature([], tf.string),
                "label": tf.FixedLenFeature([],tf.string),
                 "width": tf.FixedLenFeature([], tf.int64),
                 "height": tf.FixedLenFeature([], tf.int64)}
     parsed_features = tf.parse_single_example(example_proto, features)
-    img_b = parsed_features["img_raw_b"]
-    img_g = parsed_features["img_raw_g"]
-    img_r = parsed_features["img_raw_r"]
-    img_b = tf.decode_raw(img_b, tf.uint8)
-    img_g = tf.decode_raw(img_g, tf.uint8)
-    img_r = tf.decode_raw(img_r, tf.uint8)
+    img = parsed_features["img_raw"]
+    img = tf.decode_raw(img, tf.uint8)
     width=parsed_features["width"]
     height=parsed_features["height"]
-    # print(height,width)
-    img_b = tf.reshape(img_b, [height, width, 1])
-    img_g = tf.reshape(img_g, [height, width, 1])
-    img_r = tf.reshape(img_r, [height, width, 1])
-    img=tf.concat([img_b,img_g,img_r],-1)
-    img = tf.cast(img,tf.float32)/255. - 0.5
+    img=tf.reshape(img,[height,width,3])
+    img = tf.cast(img,tf.float32) * (1./255.) - 0.5
     label = parsed_features["label"]
     label=tf.decode_raw(label,tf.float32)
-    # return img_b,img_g,img_r,label
-    return img, label
+    
+    return img,label
+ 
 def erase_invalid_val(sequence):
     label=[]
     h,w=sequence.shape
