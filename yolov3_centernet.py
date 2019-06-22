@@ -44,7 +44,7 @@ class yolov3_centernet(object):
 
             with tf.variable_scope('detector'):
                 center = slim.conv2d(feature_map_3, cfg.feature_channels, 3, 1, padding='same',)
-                center = slim.conv2d(center, cfg.num_classes, 1, 1, padding='same',normalizer_fn=None,activation_fn=tf.nn.sigmoid, biases_initializer=tf.zeros_initializer())
+                center = slim.conv2d(center, cfg.num_classes, 1, 1, padding='same',normalizer_fn=None,activation_fn=tf.nn.softmax, biases_initializer=tf.zeros_initializer())
 
 
                 offset = slim.conv2d(feature_map_3, cfg.feature_channels, 3, 1, padding='same',)
