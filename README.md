@@ -53,3 +53,9 @@ yolo3_centernet_voc		25.23		512x512		 230MB
 ```
 ### 5. Run test demo(still need more work to get good results)
 download ckpt file<https://pan.baidu.com/s/1VrHv5U1wF1UP_r7JICbeZA>code:qqwx,and put them to ./shufflenet_face/ and ./yolo3_centernet_voc/,then run test_on_images.py
+### 6.Create tfrecords to train
+* The function about how to create and parse tfrecords is under folder img2tfrecords_detection.
+* You only need to modify the following variables：img_path, txt_path, tfrecords.
+* Then run img2tfrecords_pad.py to create tfrecords and parse it by parse-tfrecords.py.
+* For detailed implementation, please see the relevant code under folder img2tfrecords_detection.
+
