@@ -8,7 +8,7 @@ def create_tfrecords(img_path,txt_path,tfrecords,img_size=384,is_color=True):
     '''
 
     :param img_path: image path
-    :param txt_path: label txt file,  format: imgpath classid1 x1min x1max y1min y1max classid2 x2min x2max y2min y2max ...
+    :param txt_path: label txt file,  format: imgpath classid1 x1min y1min x1max y1max classid2 x2min y2min x2max y2max ...
     :param tfrecords:tfrecords name
     :param img_size:image size
     :param is_color:image is color or gray
