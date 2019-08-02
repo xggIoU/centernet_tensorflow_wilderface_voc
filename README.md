@@ -29,7 +29,6 @@ pic1 src_bbox_gt
 
 pic2 heatmap_original and heatmap_modified
 
-                               
 ![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/heatmap_original_box.png)  ![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/heatmap_modified_box.png)
 
 pic3 heatmap_original_box and heatmap_modified_box
