@@ -33,7 +33,7 @@ pic2 heatmap_original and heatmap_modified
 
 pic3 heatmap_original_box and heatmap_modified_box
 
-#### 4.2 Face detection
+#### 4.2 Face detection(wilder face)
 ```
 input_size:512x512
 downsample_ratio:4.0
@@ -45,7 +45,7 @@ epochs≈16
 
 pic4 shufflenetv2_face_result
 
-#### 4.3 Multi-target detection
+#### 4.3 Multi-target detection(voc)
 ```
 yolov3_centernet:
 input_size:512x512
@@ -86,7 +86,7 @@ pic7 shufflenetv2_centernet_seb_voc
 
 pic8 shufflenetv2_centernet_voc_result
 
-#### 4.4 loss curve
+#### 4.4 tensorboard loss curve
 ![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/yolov3_total_loss.svg)
 
 pic9 yolov3_centernet_voc_total_loss
