@@ -19,7 +19,7 @@
 * For single-target detection, trained on wilderface dataset with 12876 training images.
 * For multi-target detection, trained on pascal-voc2012 dataset with 17125 training images.
 ### 4. Experimental
-#### 4.1Modified the heat map generation method to solve the problem that the loss cannot be optimized
+#### 4.1 Modified the heat map generation method to solve the problem that the loss cannot be optimized
 ![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/src_box.png)
 
 pic1 src_bbox_gt
@@ -41,10 +41,10 @@ batch_size:14
 global_steps:14800
 epochs≈16
 ```
-##### 4.2.1 Network
-![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/shufflenetv2_centernet.png)
-##### 4.2.2 result
 ![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/face_detect.jpg)
+
+pic4 shufflenetv2_face_result
+
 #### 4.3 Multi-target detection
 ```
 yolov3_centernet:
@@ -70,12 +70,20 @@ epochs≈37
 ```
 ##### 4.3.1 Network
 ![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/yolov3.jpg)
-                                            
-                               
+
+pic5 yolov3_centernet_voc
+                                                            
 ![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/shufflenet_net.png)
+
+pic6 shufflenetv2_centernet_voc
+
 ![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/shufflenet_seb_net.png)
+
+pic6 shufflenetv2_centernet_seb_voc
+
 ##### 4.3.2 result(on training set,not very good on the test set)
 ![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/voc_detect.jpg)
+pic7 shufflenetv2_centernet_voc_result
 #### 4.4 inference time
 ```
 environment：python3.6 gtx1080ti*1 intel-i7-8700k
