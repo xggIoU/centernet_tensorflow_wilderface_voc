@@ -67,9 +67,9 @@ epochs≈37
 ```
 environment：python3.6 gtx1080ti*1 intel-i7-8700k
 model_name   			avg_time(ms)    input_size	 model_size(.pb)	
-shufflenetv2_face_v1	       21.37	512x512		20.5MB
+shufflenetv2_face_v1	        21.37	      512x512		 20.5MB
 shufflenetv2_voc_v2		17.4		512x512		24.9MB
-yolo3_voc_v2		       25.53		512x512		227.7MB
+yolo3_voc_v2		        25.53		 512x512	227.7MB
 
 ```
 ### 5. Run test demo(still need more work to get good results)
