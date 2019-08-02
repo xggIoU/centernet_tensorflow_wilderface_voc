@@ -71,7 +71,7 @@ epochs≈37
 ##### 4.3.1 Network
 ![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/yolov3.jpg)
 
-pic5 yolov3_centernet_voc
+ pic5 yolov3_centernet_voc
                                                             
 ![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/shufflenet_net.png)
 
@@ -79,12 +79,23 @@ pic6 shufflenetv2_centernet_voc
 
 ![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/shufflenet_seb_net.png)
 
-pic6 shufflenetv2_centernet_seb_voc
+pic7 shufflenetv2_centernet_seb_voc
 
 ##### 4.3.2 result(on training set,not very good on the test set)
 ![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/voc_detect.jpg)
-pic7 shufflenetv2_centernet_voc_result
-#### 4.4 inference time
+
+pic8 shufflenetv2_centernet_voc_result
+
+#### 4.4 loss curve
+![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/yolov3_total_loss.svg)
+
+pic9 yolov3_centernet_voc_total_loss
+
+![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/shuffulenet_voc_total_loss.svg)
+
+pic10 shufflenetv2_centernet_voc_total_loss
+
+#### 4.5 inference time
 ```
 environment：python3.6 gtx1080ti*1 intel-i7-8700k
 model_name   			avg_time(ms)    input_size	 model_size(.pb)	
