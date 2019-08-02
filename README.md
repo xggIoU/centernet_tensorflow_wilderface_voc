@@ -1,7 +1,7 @@
 # centernet_tensorflow_wilderface_voc
 ### 1. Introduction
 * This is the unofficial  implementation of the "CenterNet:Objects as Points".In my experiment, it was not based on the DLA34, Hourglass and other networks in the original paper. I simply modified shufflenetv2_1.0x and yolov3, and kept their feature extraction part, then connected to centernet_detect_head, and did not use dcn convolution.
-* This is just a simple attempt to the effect of the algorithm.I only have one 1080ti,**I did not use any data augmentation and any other tricks during training，so the model is not very good,still need more work to get good results**.If it helps you, please give me a star.You can read my Chinese notes.<https://zhuanlan.zhihu.com/p/68383078>
+* This is just a simple attempt to the effect of the algorithm.I only have one 1080ti,**I did not use any data augmentation and any other tricks during training，so the model is not very good,still need more work to get good results**.If it helps you, please give me a star.You can read my Chinese notes.<https://zhuanlan.zhihu.com/p/68383078>,<https://zhuanlan.zhihu.com/p/76378871>
 * Official implementation:<https://github.com/xingyizhou/CenterNet>
 * CenterNet:Objects as Points:<https://arxiv.org/pdf/1904.07850.pdf>
 * Shufflenetv2 is modified from:<https://github.com/timctho/shufflenet-v2-tensorflow>
