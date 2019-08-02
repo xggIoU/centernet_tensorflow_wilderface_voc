@@ -21,7 +21,11 @@
 ### 4. Experimental
 #### 4.1Modified the heat map generation method to solve the problem that the loss cannot be optimized
 ![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/src_box.png)
-![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/heatmap_original.png)![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/heatmap_modified.png)![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/heatmap_original_box.png)![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/heatmap_modified_box.png)
+                                          图1 src_bbox_gt
+                                          
+![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/heatmap_original.png)![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/heatmap_modified.png)
+
+![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/heatmap_original_box.png)![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/heatmap_modified_box.png)
 #### 4.2 Face detection
 ```
 input_size:512x512
@@ -59,6 +63,8 @@ epochs≈37
 ```
 ##### 4.3.1 Network
 ![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/yolov3.jpg)
+                                            
+                               
 ![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/shufflenet_net.png)
 ![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/shufflenet_seb_net.png)
 ##### 4.3.2 result(on training set,not very good on the test set)
