@@ -105,7 +105,7 @@ yolo3_voc_v2		        25.53		512x512	         227.7MB
 
 ```
 ### 5. Run test demo(still need more work to get good results)
-download ckpt file<https://pan.baidu.com/s/1VrHv5U1wF1UP_r7JICbeZA>code:qqwx,and put them to ./shufflenetv2_face_V1/, ./shufflenetv2_seb_voc/, ./shufflenetv2_voc/,and ./yolo3_voc/,then run test_voc_on_images.py or test_face_on_images.py
+download ckpt file<https://pan.baidu.com/s/1OVtOyHdc6qgcvTn56s5m2w>code:qd35,and put them to ./shufflenetv2_face_V1/, ./shufflenetv2_seb_voc/, ./shufflenetv2_voc/,and ./yolo3_voc/,then run test_voc_on_images.py or test_face_on_images.py
 ### 6.Create tfrecords to train
 * The function about how to create and parse tfrecords is under folder img2tfrecords_detection.
 * You only need to modify the following variables：img_path, txt_path, tfrecords.
