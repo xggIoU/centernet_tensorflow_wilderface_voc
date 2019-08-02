@@ -21,11 +21,16 @@
 ### 4. Experimental
 #### 4.1Modified the heat map generation method to solve the problem that the loss cannot be optimized
 ![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/src_box.png)
-                                          图1 src_bbox_gt
-                                          
-![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/heatmap_original.png)![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/heatmap_modified.png)
 
-![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/heatmap_original_box.png)![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/heatmap_modified_box.png)
+                                          pic1 src_bbox_gt
+                                          
+![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/heatmap_original.png)  ![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/heatmap_modified.png)
+
+                               pic2 heatmap_original and heatmap_modified
+                               
+![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/heatmap_original_box.png)  ![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/heatmap_modified_box.png)
+
+                              pic3 heatmap_original_box and heatmap_modified_box
 #### 4.2 Face detection
 ```
 input_size:512x512
