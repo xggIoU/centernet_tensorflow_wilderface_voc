@@ -23,10 +23,12 @@
 ![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/src_box.png)
 
 pic1 src_bbox_gt
+
                                           
 ![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/heatmap_original.png)       ![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/heatmap_modified.png)
 
 pic2 heatmap_original and heatmap_modified
+
                                
 ![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/heatmap_original_box.png)  ![](https://github.com/xggIoU/centernet_tensorflow_wilderface_voc/blob/master/display_image/heatmap_modified_box.png)
 
