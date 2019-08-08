@@ -48,7 +48,7 @@ def draw_msra_gaussian(heatmap, center, sigma):
     return heatmap
 
 
-def creat_roiheatmap(centern_roi, det_size_map):
+def creat_roiheatmap_ellipse(centern_roi, det_size_map):
     c_x, c_y = centern_roi
     sigma_x = ((det_size_map[1] - 1) * 0.5 - 1) * 0.3 + 0.8
     s_x = 2 * (sigma_x ** 2)
@@ -58,6 +58,17 @@ def creat_roiheatmap(centern_roi, det_size_map):
     Y1 = np.arange(det_size_map[0])
     [X, Y] = np.meshgrid(X1, Y1)
     heatmap = np.exp(-(X - c_x) ** 2 / s_x - (Y - c_y) ** 2 / s_y)
+    return heatmap
+
+def creat_roiheatmap_circle(centern_roi, det_size_map):
+    c_x, c_y = centern_roi
+    min_size=min(det_size_map)
+    sigma = ((min_size - 1) * 0.5 - 1) * 0.3 + 0.8
+    s_ = 2 * (sigma ** 2)
+    X1 = np.arange(det_size_map[1])
+    Y1 = np.arange(det_size_map[0])
+    [X, Y] = np.meshgrid(X1, Y1)
+    heatmap = np.exp(-(X - c_x) ** 2 / s_ - (Y - c_y) ** 2 / s_)
     return heatmap
 
 def CreatGroundTruth(label_batch):
@@ -81,9 +92,10 @@ def CreatGroundTruth(label_batch):
             size_ori = [x_max - x_min, y_max - y_min]  # w*h
             size_map_float = [size_ori[0] / cfg.down_ratio, size_ori[1] / cfg.down_ratio]
 
-            # Official implementation
+            # Official implementation ? not sure,It is currently certain that the heat map exceeds the target bbox and the loss will not converge.
             # radius = gaussian_radius(size_map_float)
             # radius = radius if radius != 0.0 else 2.5
+            # radius=sigma ？ Need to be further resolved
             # draw_msra_gaussian(cls_gt_batch[x, :, :, class_id], center_map_int, radius)
 
             # My modified implementation
@@ -91,7 +103,8 @@ def CreatGroundTruth(label_batch):
             center_map = [center_ori[0] / cfg.down_ratio, center_ori[1] / cfg.down_ratio]
             center_map_int = [int(center_map[0]), int(center_map[1])]
             center_map_obj = [center_map_int[0] - x_min_map, center_map_int[1] - y_min_map]
-            heatmap_roi = creat_roiheatmap(center_map_obj, size_map_int)
+            #heatmap_roi = creat_roiheatmap_circle(center_map_obj, size_map_int)
+            heatmap_roi = creat_roiheatmap_ellipse(center_map_obj, size_map_int)
             cls_gt_batch[x, y_min_map:y_max_map, x_min_map:x_max_map, class_id] = np.maximum(
                 cls_gt_batch[x, y_min_map:y_max_map, x_min_map:x_max_map, class_id], heatmap_roi)
 
