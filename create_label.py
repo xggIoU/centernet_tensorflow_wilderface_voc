@@ -103,6 +103,7 @@ def CreatGroundTruth(label_batch):
             center_map = [center_ori[0] / cfg.down_ratio, center_ori[1] / cfg.down_ratio]
             center_map_int = [int(center_map[0]), int(center_map[1])]
             center_map_obj = [center_map_int[0] - x_min_map, center_map_int[1] - y_min_map]
+            #you can choose circle or ellipse
             #heatmap_roi = creat_roiheatmap_circle(center_map_obj, size_map_int)
             heatmap_roi = creat_roiheatmap_ellipse(center_map_obj, size_map_int)
             cls_gt_batch[x, y_min_map:y_max_map, x_min_map:x_max_map, class_id] = np.maximum(
