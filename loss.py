@@ -18,7 +18,7 @@ def focal_loss(pred, gt):
   pos_loss = tf.reduce_sum(pos_loss)
   neg_loss = tf.reduce_sum(neg_loss)
 
-   loss = loss - (pos_loss + neg_loss) / num_pos
+   loss =  - (pos_loss + neg_loss) / num_pos
   return loss
 
 def reg_l1_loss(pred, gt):
