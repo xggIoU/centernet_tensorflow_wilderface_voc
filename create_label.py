@@ -48,27 +48,23 @@ def draw_msra_gaussian(heatmap, center, sigma):
     return heatmap
 
 
-def creat_roiheatmap_ellipse(centern_roi, det_size_map):
-    c_x, c_y = centern_roi
+def creat_roiheatmap_ellipse(det_size_map):
     sigma_x = ((det_size_map[1] - 1) * 0.5 - 1) * 0.3 + 0.8
     s_x = 2 * (sigma_x ** 2)
     sigma_y = ((det_size_map[0] - 1) * 0.5 - 1) * 0.3 + 0.8
     s_y = 2 * (sigma_y ** 2)
-    X1 = np.arange(det_size_map[1])
-    Y1 = np.arange(det_size_map[0])
-    [X, Y] = np.meshgrid(X1, Y1)
-    heatmap = np.exp(-(X - c_x) ** 2 / s_x - (Y - c_y) ** 2 / s_y)
+    h, w = [(hw - 1.) / 2. for hw in det_size_map]
+    y, x = np.ogrid[-h:h + 1, -w:w + 1]
+    heatmap = np.exp(-x**2 / s_x - y**2 / s_y)
     return heatmap
 
-def creat_roiheatmap_circle(centern_roi, det_size_map):
-    c_x, c_y = centern_roi
+def creat_roiheatmap_circle(det_size_map):
     min_size=min(det_size_map)
     sigma = ((min_size - 1) * 0.5 - 1) * 0.3 + 0.8
     s_ = 2 * (sigma ** 2)
-    X1 = np.arange(det_size_map[1])
-    Y1 = np.arange(det_size_map[0])
-    [X, Y] = np.meshgrid(X1, Y1)
-    heatmap = np.exp(-(X - c_x) ** 2 / s_ - (Y - c_y) ** 2 / s_)
+    h, w = [(hw - 1.) / 2. for hw in det_size_map]
+    y, x = np.ogrid[-h:h + 1, -w:w + 1]
+    heatmap = np.exp(-x**2 / s_ - y**2 / s_)
     return heatmap
 
 def CreatGroundTruth(label_batch):
@@ -102,10 +98,10 @@ def CreatGroundTruth(label_batch):
             center_ori = [x_min + size_ori[0] / 2.0, y_min + size_ori[1] / 2.0]  # x,y
             center_map = [center_ori[0] / cfg.down_ratio, center_ori[1] / cfg.down_ratio]
             center_map_int = [int(center_map[0]), int(center_map[1])]
-            center_map_obj = [center_map_int[0] - x_min_map, center_map_int[1] - y_min_map]
+           
             #you can choose circle or ellipse
-            #heatmap_roi = creat_roiheatmap_circle(center_map_obj, size_map_int)
-            heatmap_roi = creat_roiheatmap_ellipse(center_map_obj, size_map_int)
+            #heatmap_roi = creat_roiheatmap_circle(size_map_int)
+            heatmap_roi = creat_roiheatmap_ellipse(size_map_int)
             cls_gt_batch[x, y_min_map:y_max_map, x_min_map:x_max_map, class_id] = np.maximum(
                 cls_gt_batch[x, y_min_map:y_max_map, x_min_map:x_max_map, class_id], heatmap_roi)
 
