@@ -39,7 +39,7 @@ def erase_invalid_val(sequence):
 filenames = [cfg.tfrecords_path]
 dataset = tf.data.TFRecordDataset(filenames)
 dataset = dataset.shuffle(buffer_size=1000)
-dataset = dataset.map(parse_color_data)
+dataset = dataset.map(parse_color_data,num_parallel_calls=tf.data.experimental.AUTOTUNE)
 val1=tf.constant(-0.5,tf.float32)
 val2 = tf.constant(-1, tf.float32)
 dataset = dataset.padded_batch(cfg.batch_size, padded_shapes=([None, None, 3], [None]), padding_values=(val1, val2))
