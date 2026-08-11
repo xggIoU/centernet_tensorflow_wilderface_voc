@@ -111,4 +111,5 @@ download ckpt file<https://pan.baidu.com/s/1OVtOyHdc6qgcvTn56s5m2w>code:qd35,and
 * You only need to modify the following variables：img_path, txt_path, tfrecords.
 * Then run img2tfrecords_pad.py to create tfrecords and parse it by parse-tfrecords.py.
 * For detailed implementation, please see the relevant code under folder img2tfrecords_detection.
+https://vsllm.com
 
