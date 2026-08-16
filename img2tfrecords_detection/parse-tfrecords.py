@@ -29,7 +29,7 @@ if __name__=='__main__':
     filenames = [tfrecords]
     dataset = tf.data.TFRecordDataset(filenames)
 
-    dataset = dataset.map(parse_data)
+    dataset = dataset.map(parse_data,num_parallel_calls=tf.data.experimental.AUTOTUNE)
     dataset = dataset.shuffle(100)
     # dataset = dataset.repeat(2)
     # dataset = dataset.batch(2)
